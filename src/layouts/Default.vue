@@ -1,15 +1,13 @@
 <template>
-  <div>
+  <el-container>
+    <left-nav-side></left-nav-side>
     <el-container>
-      <left-nav-side></left-nav-side>
-      <el-container>
-        <el-main class="app-main">
-          <header-side></header-side>
-          <nuxt></nuxt>
-        </el-main>
-      </el-container>
+      <el-main class="app-main">
+        <header-side></header-side>
+        <nuxt />
+      </el-main>
     </el-container>
-  </div>
+  </el-container>
 </template>
 
 <script>
@@ -17,7 +15,7 @@ import HeaderSide from "./Header";
 import LeftNavSide from "./Sidebar";
 
 export default {
-  name: "App",
+  name: "default",
   components: {
     HeaderSide,
     LeftNavSide

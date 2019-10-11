@@ -1,26 +1,30 @@
 <template>
-  <el-form ref="form">
-    <el-form-item>
-      <el-row>
-        <el-col :span="24">
-          <h1>SECTION BASE</h1>
-        </el-col>
-      </el-row>
-    </el-form-item>
-  </el-form>
+  <section class="container">
+    <h1>SECTION BASE</h1>
+  </section>
 </template>
 
 <script>
 export default {
+  name: "Base",
+  data() {
+    return {};
+  },
+  middleware: "middlewareExample",
   asyncData(context) {
-    console.log('context | ', context)
+    console.log("context | ", context);
     return { name: "World" };
   },
-  fetch() {},
-  middleware: "middlewareExample",
-  beforeCreate() {},
-  created() {},
-  head() {},
+  fetch() {
+    console.log('fetch |')
+  },
+  head() {
+    this.$log.info('Base Section | ')
+    return {
+      title: "Base Section",
+      meta: [{ hid: "a1", name: "설명", content: "내용" }]
+    };
+  },
   mounted() {
     this.$log.info("aaaa");
   }

@@ -50,6 +50,7 @@ module.exports = {
   css: [
     // 프로젝트 내부의 Css 파일
     '~~/node_modules/element-ui/lib/theme-chalk/index.css',
+    '~/assets/common.css'
   ],
 
   /*
