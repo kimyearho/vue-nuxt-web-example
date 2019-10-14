@@ -4,10 +4,7 @@
       <app-logo />
       <h1 class="title">nuxt-web</h1>
       <h2 class="subtitle">Nuxt.js project</h2>
-      <div class="links">
-        <el-button type="default">Documentation</el-button>
-        <el-button type="primary" @click="routerBase">Link Base</el-button>
-      </div>
+      <div class="links"></div>
     </div>
   </section>
 </template>

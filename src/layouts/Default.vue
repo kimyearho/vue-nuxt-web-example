@@ -1,13 +1,13 @@
 <template>
-  <el-container>
+  <v-app>
     <left-nav-side></left-nav-side>
-    <el-container>
-      <el-main class="app-main">
-        <header-side></header-side>
+    <header-side></header-side>
+    <v-content>
+      <v-container>
         <nuxt />
-      </el-main>
-    </el-container>
-  </el-container>
+      </v-container>
+    </v-content>
+  </v-app>
 </template>
 
 <script>

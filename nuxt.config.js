@@ -28,8 +28,8 @@ module.exports = {
   // 플러그인 옵션
   // https://ko.nuxtjs.org/api/configuration-plugins
   plugins: [
-    { src: "~plugins/vue-logger", ssr: false },
-    { src: "~plugins/element-ui", ssr: true }
+    { src: "~plugins/common", ssr: false },
+    { src: "~plugins/vue-logger", ssr: false }
   ],
 
   /*
@@ -47,11 +47,21 @@ module.exports = {
   loading: { color: "#3B8070" },
 
   // 전역 CSS 옵션
-  css: [
-    // 프로젝트 내부의 Css 파일
-    '~~/node_modules/element-ui/lib/theme-chalk/index.css',
-    '~/assets/common.css'
-  ],
+  css: ["~/assets/common.css"],
+
+  modules: ["@nuxtjs/vuetify"],
+
+  // Doc: https://github.com/nuxt-community/vuetify-module
+  vuetify: {
+    customVariables: ["~/assets/variables.scss"],
+    defaultAssets: {
+      font: {
+        family: "Roboto"
+      },
+      icons: "md"
+    },
+    optionsPath: "./vuetify.options.js"
+  },
 
   /*
    ** 빌드 설정

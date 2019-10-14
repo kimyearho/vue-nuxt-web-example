@@ -1,69 +1,91 @@
 <template>
-  <el-aside>
-    <el-menu :default-openeds="['1', '2', '3']">
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-message"></i>Navigator One
-        </template>
-        <el-menu-item-group>
-          <template slot="title">Group 1</template>
-          <el-menu-item index="1-1">Option 1</el-menu-item>
-          <el-menu-item index="1-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="1-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <template slot="title">Option4</template>
-          <el-menu-item index="1-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="2">
-        <template slot="title">
-          <i class="el-icon-menu"></i>Navigator Two
-        </template>
-        <el-menu-item-group>
-          <template slot="title">Group 1</template>
-          <el-menu-item index="2-1">Option 1</el-menu-item>
-          <el-menu-item index="2-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="2-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="2-4">
-          <template slot="title">Option 4</template>
-          <el-menu-item index="2-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-submenu index="3">
-        <template slot="title">
-          <i class="el-icon-setting"></i>Navigator Three
-        </template>
-        <el-menu-item-group>
-          <template slot="title">Group 1</template>
-          <el-menu-item index="3-1">Option 1</el-menu-item>
-          <el-menu-item index="3-2">Option 2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="Group 2">
-          <el-menu-item index="3-3">Option 3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="3-4">
-          <template slot="title">Option 4</template>
-          <el-menu-item index="3-4-1">Option 4-1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-    </el-menu>
-  </el-aside>
+  <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
+    <v-list dense>
+      <template v-for="item in items">
+        <v-row v-if="item.heading" :key="item.heading" align="center">
+          <v-col cols="6">
+            <v-subheader v-if="item.heading">{{ item.heading }}</v-subheader>
+          </v-col>
+          <v-col cols="6" class="text-center">
+            <a href="#!" class="body-2 black--text">EDIT</a>
+          </v-col>
+        </v-row>
+        <v-list-group
+          v-else-if="item.children"
+          :key="item.text"
+          v-model="item.model"
+          :prepend-icon="item.model ? item.icon : item['icon-alt']"
+          append-icon
+        >
+          <template v-slot:activator>
+            <v-list-item>
+              <v-list-item-content>
+                <v-list-item-title>{{ item.text }}</v-list-item-title>
+              </v-list-item-content>
+            </v-list-item>
+          </template>
+          <v-list-item v-for="(child, i) in item.children" :key="i">
+            <v-list-item-action v-if="child.icon">
+              <v-icon>{{ child.icon }}</v-icon>
+            </v-list-item-action>
+            <v-list-item-content>
+              <v-list-item-title>{{ child.text }}</v-list-item-title>
+            </v-list-item-content>
+          </v-list-item>
+        </v-list-group>
+        <v-list-item v-else :key="item.text">
+          <v-list-item-action>
+            <v-icon>{{ item.icon }}</v-icon>
+          </v-list-item-action>
+          <v-list-item-content>
+            <v-list-item-title>{{ item.text }}</v-list-item-title>
+          </v-list-item-content>
+        </v-list-item>
+      </template>
+    </v-list>
+  </v-navigation-drawer>
 </template>
 
 <script>
 export default {
-  name: "Sidebar"
+  name: "Sidebar",
+  data() {
+    return {
+      drawer: null,
+      items: [
+        { icon: "contacts", text: "Contacts" },
+        { icon: "history", text: "Frequently contacted" },
+        { icon: "content_copy", text: "Duplicates" },
+        {
+          icon: "keyboard_arrow_up",
+          "icon-alt": "keyboard_arrow_down",
+          text: "Labels",
+          model: true,
+          children: [{ icon: "add", text: "Create label" }]
+        },
+        {
+          icon: "keyboard_arrow_up",
+          "icon-alt": "keyboard_arrow_down",
+          text: "More",
+          model: false,
+          children: [
+            { text: "Import" },
+            { text: "Export" },
+            { text: "Print" },
+            { text: "Undo changes" },
+            { text: "Other contacts" }
+          ]
+        },
+        { icon: "settings", text: "Settings" },
+        { icon: "chat_bubble", text: "Send feedback" },
+        { icon: "help", text: "Help" },
+        { icon: "phonelink", text: "App downloads" },
+        { icon: "keyboard", text: "Go to the old version" }
+      ]
+    };
+  }
 };
 </script>
 
 <style scoped>
-.el-aside {
-  border-right: 1px solid #ddd;
-}
 </style>

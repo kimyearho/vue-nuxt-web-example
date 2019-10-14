@@ -1,43 +1,50 @@
 <template>
   <section class="container">
-    <h1>SECTION BASE</h1>
+    
   </section>
 </template>
 
 <script>
+import request from "@/plugins/axios";
+
+const API_KEY = "AIzaSyDHpgyP8vCtw78G-oYCVEfFCijEfxSJ8b8";
+
 export default {
   name: "Base",
   data() {
-    return {};
+    return {
+      items: []
+    };
   },
-  middleware: "middlewareExample",
   asyncData(context) {
-    console.log("context | ", context);
-    return { name: "World" };
-  },
-  fetch() {
-    console.log('fetch |')
+    const queryParams = {
+      part: "snippet",
+      q: "audio library",
+      type: "playlist,channel",
+      maxResults: 50,
+      safeSearch: "strict",
+      key: API_KEY
+    };
+    return request.get("/search", { params: queryParams }).then(({ data }) => {
+      return { items: data.items };
+    });
   },
   head() {
-    this.$log.info('Base Section | ')
+    this.$log.info("Base Section | ");
     return {
       title: "Base Section",
       meta: [{ hid: "a1", name: "설명", content: "내용" }]
     };
   },
   mounted() {
-    this.$log.info("aaaa");
+    this.$log.info("mounted!");
   }
 };
 </script>
 
 <style>
 .container {
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
+  margin: 0 60px;
 }
 </style>
 
