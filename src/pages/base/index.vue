@@ -1,32 +1,23 @@
 <template>
-  <section class="container">
-    
-  </section>
+  <section class="container"></section>
 </template>
 
 <script>
-
-const API_KEY = "AIzaSyDHpgyP8vCtw78G-oYCVEfFCijEfxSJ8b8";
+import commonMixin from "@/layouts/mixins/commonMixin"
 
 export default {
   name: "Base",
+  mixins: [commonMixin],
   data() {
     return {
       items: []
     };
   },
-  asyncData({ $axios }) {
-    const queryParams = {
-      part: "snippet",
-      q: "audio library",
-      type: "playlist,channel",
-      maxResults: 50,
-      safeSearch: "strict",
-      key: API_KEY
-    };
-    return $axios.get("/search", { params: queryParams }).then(({ data }) => {
-      return { items: data.items };
-    });
+  asyncData(context) {
+    console.log(context)
+    // return $axios.get("/search", { params: queryParams }).then(({ data }) => {
+    //   return { items: data.items };
+    // });
   },
   head() {
     return {
