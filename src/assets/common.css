@@ -1,11 +1,15 @@
-body {
-  margin: 0;
+.header {
+  left: 0 !important;
 }
 
-.container {
-  min-height: 100vh;
-  display: flex;
+.v-navigation {
+  top: 68px !important;
+}
+
+.v-content {
+  padding: 78px 0px 0px 256px !important;
+}
+
+.container.fill-height {
   justify-content: center;
-  align-items: center;
-  text-align: center;
 }

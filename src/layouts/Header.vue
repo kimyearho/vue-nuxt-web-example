@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar app>
+  <v-app-bar class="header" app>
     <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app color="blue darken-3" dark>
       <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
         <v-app-bar-nav-icon @click.stop="drawer = !drawer"></v-app-bar-nav-icon>

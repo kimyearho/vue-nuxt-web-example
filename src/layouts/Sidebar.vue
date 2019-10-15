@@ -1,17 +1,13 @@
 <template>
-  <v-navigation-drawer v-model="drawer" :clipped="$vuetify.breakpoint.lgAndUp" app>
-    <v-list dense>
+  <v-navigation-drawer
+    v-model="drawer"
+    class="v-navigation"
+    :clipped="$vuetify.breakpoint.lgAndUp"
+    app
+  >
+    <v-list>
       <template v-for="item in items">
-        <v-row v-if="item.heading" :key="item.heading" align="center">
-          <v-col cols="6">
-            <v-subheader v-if="item.heading">{{ item.heading }}</v-subheader>
-          </v-col>
-          <v-col cols="6" class="text-center">
-            <a href="#!" class="body-2 black--text">EDIT</a>
-          </v-col>
-        </v-row>
         <v-list-group
-          v-else-if="item.children"
           :key="item.text"
           v-model="item.model"
           :prepend-icon="item.model ? item.icon : item['icon-alt']"
@@ -19,6 +15,9 @@
         >
           <template v-slot:activator>
             <v-list-item>
+              <v-list-item-action>
+                <v-icon>{{ item.icon }}</v-icon>
+              </v-list-item-action>
               <v-list-item-content>
                 <v-list-item-title>{{ item.text }}</v-list-item-title>
               </v-list-item-content>
@@ -33,14 +32,6 @@
             </v-list-item-content>
           </v-list-item>
         </v-list-group>
-        <v-list-item v-else :key="item.text">
-          <v-list-item-action>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-action>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.text }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
       </template>
     </v-list>
   </v-navigation-drawer>
@@ -53,7 +44,7 @@ export default {
     return {
       drawer: null,
       items: [
-        { icon: "contacts", text: "Contacts" },
+        { icon: "search", text: "Contacts" },
         { icon: "history", text: "Frequently contacted" },
         { icon: "content_copy", text: "Duplicates" },
         {

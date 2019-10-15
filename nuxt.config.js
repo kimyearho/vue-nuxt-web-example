@@ -9,7 +9,10 @@ module.exports = {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "Nuxt.js project" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }
+    ]
   },
 
   /**
@@ -53,14 +56,11 @@ module.exports = {
 
   // Doc: https://github.com/nuxt-community/vuetify-module
   vuetify: {
-    customVariables: ["~/assets/variables.scss"],
+    // customVariables: ["~/assets/variables.scss"],
     defaultAssets: {
-      font: {
-        family: "Roboto"
-      },
       icons: "md"
     },
-    optionsPath: "./vuetify.options.js"
+    // optionsPath: "./vuetify.options.js"
   },
 
   /*
