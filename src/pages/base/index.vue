@@ -5,7 +5,6 @@
 </template>
 
 <script>
-import request from "@/plugins/axios";
 
 const API_KEY = "AIzaSyDHpgyP8vCtw78G-oYCVEfFCijEfxSJ8b8";
 
@@ -16,7 +15,7 @@ export default {
       items: []
     };
   },
-  asyncData(context) {
+  asyncData({ $axios }) {
     const queryParams = {
       part: "snippet",
       q: "audio library",
@@ -25,12 +24,11 @@ export default {
       safeSearch: "strict",
       key: API_KEY
     };
-    return request.get("/search", { params: queryParams }).then(({ data }) => {
+    return $axios.get("/search", { params: queryParams }).then(({ data }) => {
       return { items: data.items };
     });
   },
   head() {
-    this.$log.info("Base Section | ");
     return {
       title: "Base Section",
       meta: [{ hid: "a1", name: "설명", content: "내용" }]

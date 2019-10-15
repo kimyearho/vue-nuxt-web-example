@@ -1,28 +1,17 @@
-import axios from "axios";
+export default function({ $axios, redirect }) {
+  $axios.defaults.baseURL = "https://www.googleapis.com/youtube/v3";
 
-// API 서비스
-const request = axios.create({
-  baseURL: "https://www.googleapis.com/youtube/v3",
-  timeout: 5000
-});
-
-request.interceptors.request.use(config => {
-  return config;
-});
-request.interceptors.response.use(res => {
-  return res;
-});
-
-// 인증 서비스
-// const authService = axios.create({
-//   timeout: 5000
-// });
-
-// authService.interceptors.request.use(config => {
-//   return config;
-// });
-// authService.interceptors.response.use(res => {
-//   return res;
-// });
-
-export default request
+  // $axios.setHeader("Authorization", "123");
+  $axios.onRequest(config => {
+    // console.log("Making request to " + config.url);
+  });
+  
+  $axios.onResponse(response => {});
+  
+  $axios.onError(error => {
+    const code = parseInt(error.response && error.response.status);
+    if (code === 400) {
+      redirect("/400");
+    }
+  });
+}

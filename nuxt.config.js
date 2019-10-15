@@ -11,7 +11,10 @@ module.exports = {
     ],
     link: [
       { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Material+Icons' }
+      {
+        rel: "stylesheet",
+        href: "https://fonts.googleapis.com/css?family=Material+Icons"
+      }
     ]
   },
 
@@ -31,8 +34,8 @@ module.exports = {
   // 플러그인 옵션
   // https://ko.nuxtjs.org/api/configuration-plugins
   plugins: [
-    { src: "~plugins/common", ssr: false },
-    { src: "~plugins/vue-logger", ssr: false }
+    { src: "~plugins/vue-logger", ssr: false },
+    { src: "~plugins/axios" }
   ],
 
   /*
@@ -52,14 +55,14 @@ module.exports = {
   // 전역 CSS 옵션
   css: ["~/assets/common.css"],
 
-  modules: ["@nuxtjs/vuetify"],
+  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios"],
 
   // Doc: https://github.com/nuxt-community/vuetify-module
   vuetify: {
     // customVariables: ["~/assets/variables.scss"],
     defaultAssets: {
       icons: "md"
-    },
+    }
     // optionsPath: "./vuetify.options.js"
   },
 
