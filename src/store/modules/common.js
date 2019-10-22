@@ -1,15 +1,20 @@
-const common = {
-  namespaced: true,
-  state: {
-    defaultQuery: {
-      part: "snippet",
-      q: "audio library",
-      type: "playlist,channel",
-      maxResults: 50,
-      safeSearch: "strict"
-    }
-  },
-  mutations: {},
-  actions: {},
-  getters: {}
+const state = () => ({
+  key: null,
+  user: null
+});
+
+const getters = {
+  getApiKey() {}
+};
+
+const mutations = {
+  SET_AUTH(data) {
+    state.user = data;
+  }
+};
+
+export default {
+  state,
+  getters,
+  mutations
 };

@@ -1,9 +1,11 @@
 <template>
-  <section class="container"></section>
+  <v-card class="d-flex">
+    <v-btn color="primary" @click="signin">Sign in</v-btn>
+  </v-card>
 </template>
 
 <script>
-import commonMixin from "@/layouts/mixins/commonMixin"
+import commonMixin from "@/layouts/mixins/commonMixin";
 
 export default {
   name: "Base",
@@ -13,12 +15,8 @@ export default {
       items: []
     };
   },
-  asyncData(context) {
-    console.log(context)
-    // return $axios.get("/search", { params: queryParams }).then(({ data }) => {
-    //   return { items: data.items };
-    // });
-  },
+  asyncData(context) {},
+  fetch(context) {},
   head() {
     return {
       title: "Base Section",
@@ -27,6 +25,15 @@ export default {
   },
   mounted() {
     this.$log.info("mounted!");
+  },
+  methods: {
+    signin() {
+      window.open(
+        "https://www.bungie.net/en/OAuth/Authorize?client_id=30428&response_type=code&state=6i1mkLx7923Hp91nzWVeHrzHG4",
+        "sigin",
+        "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no"
+      );
+    }
   }
 };
 </script>
