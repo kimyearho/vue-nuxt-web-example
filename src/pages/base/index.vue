@@ -28,11 +28,7 @@ export default {
   },
   methods: {
     signin() {
-      window.open(
-        "https://www.bungie.net/en/OAuth/Authorize?client_id=30428&response_type=code&state=6i1mkLx7923Hp91nzWVeHrzHG4",
-        "sigin",
-        "top=10, left=10, width=500, height=600, status=no, menubar=no, toolbar=no, resizable=no"
-      );
+      this.$auth.loginWith('google')
     }
   }
 };

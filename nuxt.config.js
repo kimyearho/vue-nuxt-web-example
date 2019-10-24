@@ -55,7 +55,7 @@ module.exports = {
   // 전역 CSS 옵션
   css: ["~/assets/common.css"],
 
-  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios"],
+  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios", "@nuxtjs/auth"],
 
   // Doc: https://github.com/nuxt-community/vuetify-module
   vuetify: {
@@ -65,6 +65,43 @@ module.exports = {
     }
     // optionsPath: "./vuetify.options.js"
   },
+
+  auth: {
+    strategies: {
+      // social: {
+      //   _scheme: 'google',
+      //   authorization_endpoint: 'https://www.googleapis.com/oauth2/v2/auth',
+      //   userinfo_endpoint: 'https://www.googleapis.com/oauth2/v3/userinfo',
+      //   scope: ['openid', 'profile', 'email'],
+      //   access_type: undefined,
+      //   access_token_endpoint: undefined,
+      //   response_type: 'code',
+      //   token_type: 'Bearer',
+      //   redirect_uri: 'http://localhost:3000',
+      //   client_id: '935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com',
+      //   token_key: 'access_token'
+      // }
+      google: {
+        client_id:
+          "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com",
+        redirect_uri: "http://localhost:3000"
+      }
+    }
+  },
+
+  // oauth: {
+  //   sessionName: "GoogleOauth2",
+  //   secretKey: "1234",
+  //   oauthHost: "https://www.googleapis.com/oauth2/v2",
+  //   oauthClientID:
+  //     "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com",
+  //   oauthClientSecret: "x2FLLw0DQWVxchTCFyciQLlw",
+  //   authorizationPath: "/auth",
+  //   scopes: [
+  //     "https://www.googleapis.com/auth/userinfo.profile",
+  //     "https://www.googleapis.com/auth/youtube"
+  //   ]
+  // },
 
   /*
    ** 빌드 설정
