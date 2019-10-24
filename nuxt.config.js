@@ -79,19 +79,6 @@ module.exports = {
       callback: "/callback"
     },
     strategies: {
-      // social: {
-      //   _scheme: 'google',
-      //   authorization_endpoint: 'https://www.googleapis.com/oauth2/v2/auth',
-      //   userinfo_endpoint: 'https://www.googleapis.com/oauth2/v3/userinfo',
-      //   scope: ['openid', 'profile', 'email'],
-      //   access_type: undefined,
-      //   access_token_endpoint: undefined,
-      //   response_type: 'code',
-      //   token_type: 'Bearer',
-      //   redirect_uri: 'http://localhost:3000',
-      //   client_id: '935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com',
-      //   token_key: 'access_token'
-      // }
       google: {
         client_id:
           "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com"
