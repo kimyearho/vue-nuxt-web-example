@@ -66,7 +66,18 @@ module.exports = {
     // optionsPath: "./vuetify.options.js"
   },
 
+  axios: {
+    proxy: true
+  },
+
+  proxy: {
+    "/api": "http://localhost:3000"
+  },
+
   auth: {
+    redirect: {
+      callback: "/callback"
+    },
     strategies: {
       // social: {
       //   _scheme: 'google',
@@ -83,8 +94,7 @@ module.exports = {
       // }
       google: {
         client_id:
-          "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com",
-        redirect_uri: "http://localhost:3000"
+          "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com"
       }
     }
   },

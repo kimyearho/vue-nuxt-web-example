@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h1>Callback</h1>
+        <h1>Login Callback</h1>
     </div>
 </template>
 
