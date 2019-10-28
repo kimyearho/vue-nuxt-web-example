@@ -1,50 +1,20 @@
 <template>
   <div>
-    <app-logo />
-    <h1 class="title">nuxt-web</h1>
-    <h2 class="subtitle">Nuxt.js project</h2>
-    <v-btn small color="primary" @click="routerBase">Base Router</v-btn>
+    <dash-board />
   </div>
 </template>
 
 <script>
-import AppLogo from "~/components/AppLogo.vue";
+import DashBoard from "./dashboard";
 
 export default {
-  data() {
-    return {};
-  },
+  name: "Index",
+  middleware: "auth",
   components: {
-    AppLogo
-  },
-  methods: {
-    routerBase() {
-      this.$router.push("/base");
-    }
+    DashBoard
   }
 };
 </script>
 
-<style>
-.title {
-  font-family: "Quicksand", "Source Sans Pro", -apple-system, BlinkMacSystemFont,
-    "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; /* 1 */
-  display: block;
-  font-weight: 300;
-  font-size: 60px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-}
-
-.links {
-  padding-top: 15px;
-}
+<style lang="scss" scoped>
 </style>
-

@@ -38,14 +38,9 @@ module.exports = {
     { src: "~plugins/axios" }
   ],
 
-  /*
-  # 공통 전역 미들웨어 설정
-  - 미들웨어를 지정하면 페이지가 바뀔때마다 실행됨.
-  - 미들웨어는 Vue 인스턴스(페이지)가 랜더링되기전에 실행 됨.
   router: {
-    middleware: 'stats'
+    // middleware: 'middlewareExample'
   },
-  */
 
   /*
    ** 사용자 정의 로딩 설정
@@ -55,7 +50,7 @@ module.exports = {
   // 전역 CSS 옵션
   css: ["~/assets/common.css"],
 
-  modules: ["@nuxtjs/vuetify", "@nuxtjs/axios", "@nuxtjs/auth"],
+  modules: ['@nuxtjs/vuetify', "@nuxtjs/axios", "@nuxtjs/auth"],
 
   // Doc: https://github.com/nuxt-community/vuetify-module
   vuetify: {
@@ -81,7 +76,7 @@ module.exports = {
     strategies: {
       google: {
         client_id:
-          "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com"
+          "935273157610-cdg83657n0i05utaco8l9rntdvv41li2.apps.googleusercontent.com",
       }
     }
   },

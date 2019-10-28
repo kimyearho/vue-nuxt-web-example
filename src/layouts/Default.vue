@@ -1,21 +1,28 @@
 <template>
   <v-app>
-    <left-nav-side></left-nav-side>
-    <header-side></header-side>
-    <v-content>
-      <v-container class="fill-height" fluid>
-        <nuxt />
-      </v-container>
-    </v-content>
+    <div v-if="isLogin">
+      <left-nav-side></left-nav-side>
+      <header-side></header-side>
+      <v-content>
+        <v-container class="fill-height" fluid>
+          <nuxt />
+        </v-container>
+      </v-content>
+    </div>
+    <div v-else>
+      <nuxt />
+    </div>
   </v-app>
 </template>
 
 <script>
 import HeaderSide from "./Header";
 import LeftNavSide from "./Sidebar";
+import CommonMixins from './mixins/commonMixin'
 
 export default {
   name: "default",
+  mixins: [CommonMixins],
   components: {
     HeaderSide,
     LeftNavSide

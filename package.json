@@ -2,7 +2,7 @@
   "name": "nuxt-web",
   "version": "1.0.0",
   "description": "Nuxt.js project",
-  "author": "Yeonho <yeonho@in-soft.co.kr>",
+  "author": "Yeonho <kstory8715@gmail.com>",
   "private": true,
   "scripts": {
     "dev": "nuxt",
