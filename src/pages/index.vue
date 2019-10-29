@@ -9,7 +9,7 @@ import DashBoard from "./dashboard";
 
 export default {
   name: "Index",
-  middleware: "auth",
+  // middleware: "auth",
   components: {
     DashBoard
   }
