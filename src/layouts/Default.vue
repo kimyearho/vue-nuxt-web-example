@@ -4,10 +4,11 @@
       <left-nav-side></left-nav-side>
       <header-side></header-side>
       <v-content>
-        <v-container class="fill-height" fluid>
+        <v-container fluid>
           <nuxt />
         </v-container>
       </v-content>
+      <footer-side />
     </div>
     <div v-else>
       <nuxt />
@@ -18,14 +19,16 @@
 <script>
 import HeaderSide from "./Header";
 import LeftNavSide from "./Sidebar";
-import CommonMixins from './mixins/commonMixin'
+import FooterSide from "./Footer";
+import CommonMixins from "./mixins/commonMixin";
 
 export default {
   name: "default",
   mixins: [CommonMixins],
   components: {
     HeaderSide,
-    LeftNavSide
+    LeftNavSide,
+    FooterSide
   },
   data() {
     return {};

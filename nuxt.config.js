@@ -57,6 +57,9 @@ module.exports = {
     // customVariables: ["~/assets/variables.scss"],
     defaultAssets: {
       icons: "md"
+    },
+    theme: {
+      dark: true
     }
     // optionsPath: "./vuetify.options.js"
   },

@@ -1,9 +1,23 @@
 <template>
   <div>
     <div v-if="isLogin">
-      <app-logo />
-      <h1 class="title">nuxt-web</h1>
-      <h2 class="subtitle">Nuxt.js project</h2>
+      <v-row align="center" justify="center">
+        <v-col cols="11">
+          <v-card>
+            <v-row>
+              <v-col cols="12" :style="{padding: '0px'}">
+                <v-img
+                  src="https://www.htxt.co.za/wp-content/uploads/2019/06/ShadowKeep.jpg"
+                  max-width="1920"
+                  max-height="150"
+                  position="0 -250px"
+                  aspect-ratio="1"
+                ></v-img>
+              </v-col>
+            </v-row>
+          </v-card>
+        </v-col>
+      </v-row>
     </div>
   </div>
 </template>
