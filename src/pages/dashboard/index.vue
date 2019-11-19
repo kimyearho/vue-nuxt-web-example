@@ -7,10 +7,10 @@
             <v-row>
               <v-col cols="12" :style="{padding: '0px'}">
                 <v-img
-                  src="https://www.htxt.co.za/wp-content/uploads/2019/06/ShadowKeep.jpg"
+                  src="https://post-phinf.pstatic.net/MjAxODA3MDNfNjIg/MDAxNTMwNTc5OTY5NTI2.EorJnRgMV-d2GkpO0qbfwJU34eH-ONzHPEFtTVRpUJkg.0asOd6-4CzzA2jJ-wAg0qa-q92N_DQABjdnkHaQlUHgg.PNG/asdf.png?type=w1200"
                   max-width="1920"
-                  max-height="150"
-                  position="0 -250px"
+                  max-height="170"
+                  position="0 -108px"
                   aspect-ratio="1"
                 ></v-img>
               </v-col>
