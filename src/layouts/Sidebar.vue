@@ -50,7 +50,7 @@ export default {
     return {
       drawer: null,
       items: [
-        { icon: "search", text: "요약" },
+        { icon: "dashboard", text: "요약" },
         {
           icon: "keyboard_arrow_up",
           "icon-alt": "keyboard_arrow_down",

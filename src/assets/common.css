@@ -7,9 +7,14 @@
 }
 
 .v-content {
-  padding: 78px 0px 0px 256px !important;
+  padding: 58px 0px 0px 256px !important;
 }
 
 .container.fill-height {
   justify-content: center;
+}
+
+.lightbox {
+  box-shadow: 0 0 20px inset rgba(0, 0, 0, 0.2);
+  background-image: linear-gradient(to top, rgba(0, 0, 0, 0.6) 0%, transparent 72px);
 }
