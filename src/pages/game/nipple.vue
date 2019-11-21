@@ -53,5 +53,11 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
+#joystick >>> .back {
+  background: #000 !important;
+}
+#joystick >>> .front {
+  background: #fff !important;
+}
 </style>
