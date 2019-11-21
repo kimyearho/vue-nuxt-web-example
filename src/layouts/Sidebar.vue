@@ -51,13 +51,14 @@ export default {
       drawer: null,
       items: [
         { icon: "dashboard", text: "요약" },
-        {
-          icon: "keyboard_arrow_up",
-          "icon-alt": "keyboard_arrow_down",
-          text: "주간 리셋정보",
-          model: true,
-          children: [{ icon: "", text: "황혼전" }]
-        }
+        { icon: "dashboard", text: "샘플" },
+        // {
+        //   icon: "keyboard_arrow_up",
+        //   "icon-alt": "keyboard_arrow_down",
+        //   text: "주간 리셋정보",
+        //   model: true,
+        //   children: [{ icon: "", text: "황혼전" }]
+        // }
         // {
         //   icon: "keyboard_arrow_up",
         //   "icon-alt": "keyboard_arrow_down",

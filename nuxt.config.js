@@ -35,6 +35,8 @@ module.exports = {
   // https://ko.nuxtjs.org/api/configuration-plugins
   plugins: [
     { src: "~plugins/vue-logger", ssr: false },
+    { src: "~plugins/lodash", ssr: false },
+    { src: "~plugins/nipple", ssr: false },
     { src: "~plugins/axios" }
   ],
 
